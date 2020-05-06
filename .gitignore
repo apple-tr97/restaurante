@@ -1,5 +1,7 @@
 
+
 .DS_Store
+
 restaurante/.classpath
 restaurante/.project
 restaurante/.settings/.jsdtscope
@@ -10,4 +12,6 @@ restaurante/.settings/org.eclipse.wst.common.project.facet.core.xml
 restaurante/.settings/org.eclipse.wst.jsdt.ui.superType.container
 restaurante/.settings/org.eclipse.wst.jsdt.ui.superType.name
 restaurante/.settings/org.eclipse.wst.validation.prefs
+
 SQL/.DS_Store
+
