@@ -2,22 +2,50 @@
 <!DOCTYPE struts PUBLIC
         "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
         "http://struts.apache.org/dtds/struts-2.3.dtd">
+
 <struts>
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
     <constant name="struts.devMode" value="true"/>
 
-    <include file="example.xml"/>
+   
+    
 
-    <package name="default" namespace="/" extends="struts-default">
+    <package name="default" namespace="/" extends="json-default">
 
         <default-action-ref name="index"/>
 
-        <action name="index">
-            <result type="redirectAction">
-                <param name="actionName">HelloWorld</param>
-                <param name="namespace">/example</param>
-            </result>
+         <action name="index">
+        	<result>example/HelloWorld.jsp</result>
+	    </action>
+	    
+	         <action name="goto_verReservaciones">
+            <result>/WEB-INF/example/verReservaciones.jsp</result>
         </action>
+        
+        <action name="goto_historialReservaciones">
+            <result>/WEB-INF/example/historialReservaciones.jsp</result>
+        </action>
+        
+        <action name="goto_historialFeedback">
+            <result>/WEB-INF/Feedback/historialFeedback.jsp</result>
+        </action>
+         <action name="goto_Feedback">
+            <result>/WEB-INF/Feedback/crearFeedback.jsp</result>
+        </action>
+
+        <action name="Login_*" method="{1}" class="restaurante.example.Login">
+            <result name="input">/WEB-INF/example/Login.jsp</result>
+            <result type="redirectAction">Menu</result>
+        </action>
+
+        <action name="*" class="restaurante.example.ExampleSupport">
+            <result>/WEB-INF/example/{1}.jsp</result>
+        </action>
+        
+         <action name="registerfeedback" class="restaurante.action.FeedbackAction" >
+			<result name="REGISTER" type="json"></result>
+		</action>
+   
 
     </package>
 
