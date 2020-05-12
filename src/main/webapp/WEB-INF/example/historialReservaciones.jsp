@@ -11,7 +11,7 @@
     function report() {
     	console.log("Entramos?");
 		$.ajax({	
-			
+
 			type:"GET",
 			url:"report.action",
 			success: function(result){
@@ -20,15 +20,20 @@
 					tblData += 
 						"<tr>" +
 							"<td>" +this.idReservacion+"</td>" +
-							console.log("idReservacion"+ this.id);
+							console.log("idReservacion: "+ this.idReservacion);
 							"<td>" +this.idUsuario+"</td>" +
+							console.log("idReservacion: "+ this.idUsuario);
 							"<td>" +this.idMesa+"</td>" +
+							console.log("idReservacion: "+ this.idMesa);
 							"<td>" +this.fecha+"</td>" +
+							console.log("idReservacion: "+ this.fecha);
 							"<td>" +this.horario+"</td>" +
+							console.log("idReservacion: "+ this.horario);
 							"<td>" +this.npersonas+"</td>" +
+							console.log("idReservacion: "+ this.npersonas);
 						"</tr>";
 				});
-				$("#container").html(tblData);
+				$("#table").html(tblData);
 			},
 			error: function(result){
 				alert("Some error occured.");
