@@ -1,4 +1,7 @@
 
+
+.DS_Store
+
 restaurante/.classpath
 restaurante/.project
 restaurante/.settings/.jsdtscope
@@ -45,3 +48,6 @@ restaurante/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml
 restaurante/.idea/jarRepositories.xml
 restaurante/.idea/encodings.xml
 restaurante/.idea/compiler.xml
+
+SQL/.DS_Store
+
