@@ -37,6 +37,7 @@ public class ReservacionAction extends ActionSupport {
 					reservacionBean.setFecha(rs.getString("fecha"));
 					reservacionBean.setHorario(rs.getString("horario"));
 					reservacionBean.setNpersonas(rs.getString("npersonas"));
+					reservacionList.add(reservacionBean);
 				}
 			}
 		} catch (Exception e) {
