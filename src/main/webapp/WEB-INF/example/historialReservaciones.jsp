@@ -15,26 +15,38 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
+        <th>ID Reservacion</th>
+        <th>ID Usuario</th>
+        <th>ID Mesa</th>
+        <th>Fecha</th>
+        <th>Horario</th>
+        <th>Numero personas</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>2020-10-10</td>
+        <td>10:20:20</td>
+        <td>5</td>
       </tr>
       <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2020-10-10</td>
+        <td>09:20:20</td>
+        <td>10</td>
       </tr>
       <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td>2020-10-10</td>
+        <td>12:20:20</td>
+        <td>8</td>
       </tr>
     </tbody>
   </table>
