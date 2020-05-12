@@ -31,6 +31,8 @@
         <action name="*" class="restaurante.example.ExampleSupport">
             <result>/WEB-INF/example/{1}.jsp</result>
         </action>
+        
+
 
         <!-- Add additional "example" package actions here. -->
 
