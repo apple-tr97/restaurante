@@ -2,7 +2,7 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
-    Historial reservaciones
+    <title>historialReservaciones.jsp</title>
 </head>
 
 <body>
