@@ -45,6 +45,10 @@
          <action name="registerfeedback" class="restaurante.action.FeedbackAction" >
 			<result name="REGISTER" type="json"></result>
 		</action>
+		
+		<action name="report" class="restaurante.action.ReportAction">
+			<result name="REPORT" type="json"></result>
+		</action>
    
 
     </package>
