@@ -32,7 +32,7 @@ public class ReservacionAction extends ActionSupport {
 				while (rs.next()) {
 					reservacionBean = new ReservacionBean();
 					reservacionBean.setIdReservacion(rs.getString("id_reservacion"));
-					reservacionBean.setIdUsuario(rs.getString("id_reservacion"));
+					reservacionBean.setIdUsuario(rs.getString("id_usuario"));
 					reservacionBean.setIdMesa(rs.getString("id_mesa"));
 					reservacionBean.setFecha(rs.getString("fecha"));
 					reservacionBean.setHorario(rs.getString("horario"));

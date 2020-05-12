@@ -3,12 +3,15 @@
 <html>
 <head>
 	<title>historialReservaciones.jsp</title>
-	<link href="../styles/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
-	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  	<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+	
     <script type="text/javascript">
-    function report() {		
-		$.ajax({			
+    function report() {
+    	console.log("Entramos?");
+		$.ajax({	
+			
 			type:"GET",
 			url:"report.action",
 			success: function(result){
@@ -16,9 +19,10 @@
 				$.each(result.reservacionList, function() {					
 					tblData += 
 						"<tr>" +
-							"<td>" +this.id_reservacion+"</td>" +
-							"<td>" +this.id_usuario+"</td>" +
-							"<td>" +this.id_mesa+"</td>" +
+							"<td>" +this.idReservacion+"</td>" +
+							console.log("idReservacion"+ this.id);
+							"<td>" +this.idUsuario+"</td>" +
+							"<td>" +this.idMesa+"</td>" +
 							"<td>" +this.fecha+"</td>" +
 							"<td>" +this.horario+"</td>" +
 							"<td>" +this.npersonas+"</td>" +
