@@ -51,3 +51,34 @@ restaurante/.idea/compiler.xml
 
 SQL/.DS_Store
 
+/target/
+.classpath
+.project
+.settings/.jsdtscope
+.settings/org.eclipse.core.resources.prefs
+.settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.wst.common.component
+.settings/org.eclipse.wst.common.project.facet.core.xml
+.settings/org.eclipse.wst.jsdt.ui.superType.container
+.settings/org.eclipse.wst.jsdt.ui.superType.name
+.settings/org.eclipse.wst.validation.prefs
+target/classes/restaurante/example/ExampleSupport.class
+target/classes/restaurante/example/HelloWorld.class
+target/classes/restaurante/example/Login.class
+target/test-classes/restaurante/example/ConfigTest.class
+target/test-classes/restaurante/example/HelloWorldTest.class
+target/test-classes/restaurante/example/LoginTest.class
+target/classes/restaurante/example/ExampleSupport.class
+target/classes/restaurante/example/HelloWorld.class
+target/classes/restaurante/example/Login.class
+target/test-classes/restaurante/example/ConfigTest.class
+target/test-classes/restaurante/example/HelloWorldTest.class
+target/test-classes/restaurante/example/LoginTest.class
+target/classes/restaurante/example/ExampleSupport.class
+target/classes/restaurante/example/ExampleSupport.class
+target/classes/restaurante/example/HelloWorld.class
+target/classes/restaurante/example/Login.class
+target/test-classes/restaurante/example/ConfigTest.class
+target/test-classes/restaurante/example/HelloWorldTest.class
+target/test-classes/restaurante/example/LoginTest.class
+*.class
