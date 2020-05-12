@@ -14,6 +14,14 @@
         <action name="HelloWorld" class="restaurante.example.HelloWorld">
             <result>/WEB-INF/example/HelloWorld.jsp</result>
         </action>
+        
+        <action name="goto_verReservaciones">
+            <result>/WEB-INF/example/verReservaciones.jsp</result>
+        </action>
+        
+        <action name="goto_historialReservaciones">
+            <result>/WEB-INF/example/historialReservaciones.jsp</result>
+        </action>
 
         <action name="Login_*" method="{1}" class="restaurante.example.Login">
             <result name="input">/WEB-INF/example/Login.jsp</result>
