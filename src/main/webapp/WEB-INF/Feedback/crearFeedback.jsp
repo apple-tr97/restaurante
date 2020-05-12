@@ -53,7 +53,7 @@
 			
 			<div class="form-group">
 			<textarea class="form-control" rows="5" id="idUsuario" name="idUsuario" placeholder="Id Usario"></textarea>
-			<textarea class="form-control" rows="5" id="star" name="comentario" placeholder="Comentario"></textarea>
+			<textarea class="form-control" rows="5" id="comentario" name="comentario" placeholder="Comentario"></textarea>
 			 <textarea class="form-control" rows="5" id="star" name="star" placeholder="Stars"></textarea>
 				
 			</div>

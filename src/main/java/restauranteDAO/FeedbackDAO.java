@@ -44,7 +44,7 @@ public class FeedbackDAO {
 	public String registerFeedback(int id_usuario, String comentario, int star) throws SQLException, Exception {
 		try {
 			String sql = "INSERT INTO Feedback (id_usuario, comentario, star, date)";
-	        sql+="VALUES (?, NOW(), ?, ?)";
+	        sql+="VALUES (?, ?, ?,NOW())";
 			PreparedStatement ps = myconnection().prepareStatement(sql);
 			//System.out.println("Id usuario: "+ usuario.getId_usuario());
 			ps.setInt(1, id_usuario);
