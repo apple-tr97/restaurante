@@ -6,7 +6,7 @@ CREATE TABLE Usuario
 (
  id_usuario Int NOT NULL AUTO_INCREMENT,
  name    Varchar(45) NOT NULL ,
- mail     Varchar(45) NOT NULL ,
+ mail     Varchar(45) NOT NULL UNIQUE ,
  password Varchar(45) NOT NULL ,
  type Varchar(45) NOT NULL ,
 

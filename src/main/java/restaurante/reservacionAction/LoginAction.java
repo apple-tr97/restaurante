@@ -14,7 +14,13 @@ public class LoginAction extends ActionSupport implements SessionAware {
     public String pass;
     public String user;
     public String autenticado = "false";
-
+    public UserBean userbean = new UserBean();
+    public UserBean getUserbean() {
+        return userbean;
+    }
+    public void setUserbean(UserBean userbean) {
+        this.userbean = userbean;
+    }
     public String getAutenticado() {
         return autenticado;
     }
@@ -39,8 +45,8 @@ public class LoginAction extends ActionSupport implements SessionAware {
         if(sessionMap!=null){
             sessionMap.invalidate();
         }
-        UserBean userbean = ReservacionDAO.getUsuarioByNameAndPass(getUser(), getPass());
-        System.out.println(userbean.getId_usuario());
+        userbean = ReservacionDAO.getUsuarioByNameAndPass(getUser(), getPass());
+        System.out.println(userbean);
         if(userbean.getNombre() != null) {
             this.autenticado = "true";
             sessionMap.put("mail",user);

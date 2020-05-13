@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
 
+
     <link rel="stylesheet" href="../css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="../css/animate.css">
     
@@ -58,11 +59,12 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item active"><a href="menu.jsp" class="nav-link">Menú</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link">Reservaciones</a></li>
-	        	<li class="nav-item"><a href="menu.html" class="nav-link">Feedback</a></li>
-	          <li class="nav-item cta"><a href="reservation.html" class="nav-link">Hacer reservación</a></li>
-            <li class="nav-item cta"><a href="reservation.html" class="nav-link">Login</a></li>
+	        	<li class="nav-item active"><a href="menu.jsp" class="nav-link">Menu</a></li>
+	        	<li class="nav-item" style="display: none"><a href="about.html" class="nav-link">Reservaciones</a></li>
+	        	<li class="nav-item" style="display: none"><a href="menu.html" class="nav-link">Feedback</a></li>
+	          <li class="nav-item cta" style="display: none"><a href="reservation.html" class="nav-link">Hacer reservacion</a></li>
+				<button type="button" id="loginmb" style="display: block" class="btn btn-primary" data-toggle="modal" data-target="#Login">Login</button>
+				<button type="button" id="signout" style="display: none" class="btn btn-primary"></button>
 	        </ul>
 	      </div>
 	    </div>
@@ -462,6 +464,145 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="../js/google-map.js"></script>
   <script src="../js/main.js"></script>
-    
+
+	<div class="modal" id="Login">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Login</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="usr">Email:</label>
+						<input type="text" class="form-control" id="usr">
+					</div>
+					<div class="form-group">
+						<label for="pwd">Password:</label>
+						<input type="password" class="form-control" id="pwd">
+					</div>
+					<a onclick="signupModel()" href="#">Singup</a>
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					<button type="submit" id="LoginB" class="btn btn-primary">Login</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="modal" id="SignIn">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Sign In</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="usr">Name:</label>
+						<input type="text" class="form-control" id="nName">
+					</div>
+					<div class="form-group">
+						<label for="usr">Email:</label>
+						<input type="text" class="form-control" id="nUser">
+					</div>
+					<div class="form-group">
+						<label for="pwd">Password:</label>
+						<input type="password" class="form-control" id="nPassword">
+					</div>
+					<div class="form-group">
+						<label for="pwd">Confirm Password:</label>
+						<input type="password" class="form-control" id="cPassword">
+					</div>
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button  type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					<button  type="submit" id="signInB" class="btn btn-primary">Sign in</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
   </body>
+	<script>
+		function signupModel() {
+			$("#Login").modal("hide");
+			$("#SignIn").modal("toggle");
+		}
+
+		$("#signInB").click(function(){
+			var name = $("#nName").val();
+			var email = $("#nUser").val();
+			var password = $("#nPassword").val();
+			var cpassqord = $("#cPassword").val()
+			var json = {"name":name,"mail":email,"pass":password,"passC":cpassqord}
+			if(email.includes("@")) {
+				if (password == cpassqord){
+					$.ajax({
+						url: "registrar",
+						type: 'POST',
+						dataType: 'json',
+						data: json,
+						success:function(response){
+							alert("Usuario Registrado");
+							$("#nName").val("");
+							$("#nUser").val("");
+							$("#nPassword").val("");
+							$("#cPassword").val("")
+							$("#SignIn").modal("hide");
+
+						},
+						error:function(jqXhr, textStatus, errorThrown){
+							alert("Error al registrar el correo ya existe");
+						}
+					});
+				}else {alert("Passwords no coinciden");}
+			}else {alert("Inserte correo correctamente");}
+		});
+
+		$("#LoginB").click(function(){
+			var email= $("#usr").val();
+			var password = $("#pwd").val();
+			var json = {"user":email,"pass":password}
+			if(email.length > 1) {
+				if (password.length > 1){
+					$.ajax({
+						url: "login",
+						type: 'POST',
+						dataType: 'json',
+						data: json,
+						success:function(response){
+							console.log(response);
+							document.getElementById("loginmb").style.display = "none";
+							$("#signout").html(response.userbean.nombre+" (sign out)");
+							document.getElementById("signout").style.display = "block";
+							$("#Login").modal("hide");
+							$("#usr").val("");
+							$("#pwd").val("");
+							if(response.userbean.type == "user") {
+								
+							}
+
+						},
+						error:function(jqXhr, textStatus, errorThrown){
+							alert("Correo o password erroneo");
+						}
+					});
+				}else {alert("Password vacio");}
+			}else {alert("Usuario vacio");}
+		});
+	</script>
 </html>
