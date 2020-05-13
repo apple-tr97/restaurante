@@ -10,8 +10,10 @@ public class ReservacionDAO {
 	
 	public static Connection myconnection() throws Exception {
 		try {
+
 			Class.forName("com.mysql.jdbc.Driver");
 			return DriverManager.getConnection("jdbc:mysql://localhost/restaurante?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -38,8 +40,8 @@ public class ReservacionDAO {
 	public ResultSet historialReservacionesUsuario(int idUsuario) throws SQLException, Exception {
 		ResultSet rs = null;
 		try {
-			String sql = "SELECT id_reservacion,id_mesa ,fecha , horario, npersonas FROM Reservacion WHERE";
-			sql += " id_usuario = ?";
+			String sql = "SELECT * FROM Reservacion WHERE";
+			sql += " id_usuario = ?;";
 			PreparedStatement ps = myconnection().prepareStatement(sql);
 			ps.setInt(1, idUsuario);
 			System.out.println("QUERY;"+ ps);
