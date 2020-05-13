@@ -36,15 +36,13 @@ public class ReservacionDAO {
 		}
 	}
 	
-	public ResultSet historialReservacionesUsuario(int idUsuario) throws SQLException, Exception {
+	public ResultSet historialReservacionesUsuario(int idUsuario) throws Exception {
 		ResultSet rs = null;
+		String sql = "SELECT * FROM Reservacion WHERE id_usuario = ?";
 		try {
-			String sql = "SELECT * FROM Reservacion WHERE";
-			sql += " id_usuario = ?;";
 			PreparedStatement ps = myconnection().prepareStatement(sql);
 			ps.setInt(1, idUsuario);
-			System.out.println("QUERY;"+ ps);
-			rs = ps.executeQuery(sql);
+			rs = ps.executeQuery();
 			return rs;
 		} catch (Exception e) {
 			e.printStackTrace();
