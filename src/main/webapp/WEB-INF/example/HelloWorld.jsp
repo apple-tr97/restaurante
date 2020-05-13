@@ -73,7 +73,7 @@
 	        	<li class="nav-item"><a href="${goto_misreservaciones}"class="nav-link">Mis Reservaciones</a></li>
 	        	<li class="nav-item"><a href="${goto_reservaciones}" class="nav-link">Reservaciones</a></li>
 	        	<li class="nav-item"><a href="${goto_feedback}" class="nav-link">Feedback</a></li>
-	        	<li class="nav-item"><a href="${goto_reportefeedback}" class="nav-link">Reporte de Feedback</a></li>
+	        	<li class="nav-item"><a href="${goto_reportefeedback}" class="nav-link">Reporte de Feedback</a></li> 
 	          <li class="nav-item cta"><a href="${goto_creareservacion}" class="nav-link">Hacer reservación</a></li>
             <button type="button" id="loginmb" style="display: block" class="btn btn-primary" data-toggle="modal" data-target="#Login">Login</button>
             <button type="button" id="signout" style="display: none" class="btn btn-primary"></button>
