@@ -38,7 +38,8 @@ public class ReservacionDAO {
 	public ResultSet historialReservacionesUsuario(String idUsuario) throws SQLException, Exception {
 		ResultSet rs = null;
 		try {
-			String sql = "SELECT id_reservacion,id_mesa ,fecha , horario, npersonas FROM Reservacion WHERE id_usuario = ?";
+			String sql = "SELECT id_reservacion,id_mesa ,fecha , horario, npersonas FROM Reservacion WHERE";
+			sql += " id_usuario = ?";
 			PreparedStatement ps = myconnection().prepareStatement(sql);
 			ps.setString(1, idUsuario);
 			System.out.println("QUERY;"+ ps);
