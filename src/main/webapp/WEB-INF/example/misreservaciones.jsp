@@ -37,13 +37,13 @@
 				var tblData="";
 				$.each(result.reservacionList, function() {					
 					tblData += 					
-						"<tr >" + "<p id='idComentarioD'>"+
-							"<td>" +this.idReservacion+"</td>" +
+						"<tr id = 'columna'>" +
+							"<td  id='idComentarioD'>" +this.idReservacion+"</td>" +
 							"<td>" +this.idMesa+"</td>" +
 							"<td>" +this.fecha+"</td>" +
 							"<td>" +this.horario+"</td>" +
 							"<td>" +this.npersonas+"</td>" +
-							"<td><button class='btn btn-sm btn-danger' onclick='deleteReservacion();'>Delete</button>"+ "</td>"+
+							"<td><button class='btn btn-sm btn-danger' onclick='deleteReservacion(this);'>Delete</button>"+ "</td>"+
 						"</tr>";
 				});
 				$("#body").html(tblData);
@@ -57,18 +57,18 @@
     function deleteReservacion(that) {	
 		var id_reservacion = $("#idComentarioD").text();
 		console.log(id_reservacion); 
+		
+		var json = {"idReservacion":id_reservacion}
 		$.ajax({
 			type:"POST",
 			url:"deletetweet.action",
-			data:"id_reservacion="+ id_reservacion,
+			data:"idReservacion="+ id_reservacion,
 			success: function(data){
-				if(data.msg==="Delete Successful"){
-					alert(data.msg)
-					$(that).closest('#dl').remove();
+				
+					alert("Borrado Exitoso");
+					$(that).closest("#columna").remove();
 					
-				} else{
-					alert(data.msg)
-				}
+				
 			},
 			error:function(data){
 				alert("Some error occured.");
@@ -119,7 +119,7 @@
 		  <table class="table" id="table">
 		    <thead>
 		      <tr>
-		      <p id="idComentarioD"></p>
+		      
 		        <th>ID Reservacion</th>
 		        <th>ID Mesa</th>
 		        <th>Fecha</th>

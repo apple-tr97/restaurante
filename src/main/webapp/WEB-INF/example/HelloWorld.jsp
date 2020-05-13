@@ -46,7 +46,7 @@
 						    <span class="text">feliciano@gmail.com</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
-						    <p class="mb-0 register-link"><span>Servicio:</span> <span>Monday - Sunday</span> <span>8:00AM - 9:00PM</span></p>
+						    <p class="mb-0 register-link"><span>Servicio:</span> <span>Lunes - Sábado</span> <span>8:00AM - 9:00PM</span></p>
 					    </div>
 				    </div>
 			    </div>
