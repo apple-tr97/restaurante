@@ -32,6 +32,25 @@
          <action name="goto_Feedback">
             <result>/WEB-INF/Feedback/crearFeedback.jsp</result>
         </action>
+        
+         <action name="goto_menu">
+            <result>/WEB-INF/example/menu.jsp</result>
+        </action>
+         <action name="goto_misreservaciones">
+            <result>/WEB-INF/example/misreservaciones.jsp</result>
+        </action>
+         <action name="goto_reservaciones">
+            <result>/WEB-INF/example/reservaciones.jsp</result>
+        </action>
+         <action name="goto_feedback">
+            <result>/WEB-INF/example/feedback.jsp</result>
+        </action>
+         <action name="goto_reportefeedback">
+            <result>/WEB-INF/example/reportefeedback.jsp</result>
+        </action>
+         <action name="goto_creareservacion">
+            <result>/WEB-INF/example/reservation.jsp</result>
+        </action>
 
         <action name="Login_*" method="{1}" class="restaurante.example.Login">
             <result name="input">/WEB-INF/example/Login.jsp</result>
