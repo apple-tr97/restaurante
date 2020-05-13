@@ -78,37 +78,32 @@
 	              <div class="row">
 	                <div class="col-md-6">
 	                  <div class="form-group">
-	                    <label for="">Name</label>
-	                    <input type="text" class="form-control" placeholder="Your Name">
+	                    <label for="">Nombre</label>
+	                    <input type="text" class="form-control" placeholder="Nombre">
+	                  </div>
+	                </div>
+	                
+	                <div class="col-md-6">
+	                  <div class="form-group">
+	                    <label for="">Fecha</label>
+	                    <input type="text" class="form-control" id="book_date" placeholder="Fecha">
 	                  </div>
 	                </div>
 	                <div class="col-md-6">
 	                  <div class="form-group">
-	                    <label for="">Email</label>
-	                    <input type="text" class="form-control" placeholder="Your Email">
+	                    <label for="">Horario</label>
+	                    <input type="text" class="form-control" id="book_time" placeholder="Horario">
+	                  </div>
+	                </div>
+	                 <div class="col-md-6">
+	                  <div class="form-group">
+	                    <label for="">Mesa</label>
+	                    <input type="text" class="form-control" placeholder="Mesa">
 	                  </div>
 	                </div>
 	                <div class="col-md-6">
 	                  <div class="form-group">
-	                    <label for="">Phone</label>
-	                    <input type="text" class="form-control" placeholder="Phone">
-	                  </div>
-	                </div>
-	                <div class="col-md-6">
-	                  <div class="form-group">
-	                    <label for="">Phone</label>
-	                    <input type="text" class="form-control" id="book_date" placeholder="Date">
-	                  </div>
-	                </div>
-	                <div class="col-md-6">
-	                  <div class="form-group">
-	                    <label for="">Time</label>
-	                    <input type="text" class="form-control" id="book_time" placeholder="Time">
-	                  </div>
-	                </div>
-	                <div class="col-md-6">
-	                  <div class="form-group">
-	                    <label for="">Person</label>
+	                    <label for="">Número de personas</label>
 	                    <div class="select-wrap one-third">
 	                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
 	                      <select name="" id="" class="form-control">
@@ -123,7 +118,7 @@
 	                </div>
 	                <div class="col-md-12 mt-3">
 	                  <div class="form-group">
-	                    <input type="submit" value="Make a Reservation" class="btn btn-primary py-3 px-5">
+	                    <input type="submit" value="Hacer Reservación" class="btn btn-primary py-3 px-5">
 	                  </div>
 	                </div>
 	              </div>
@@ -131,7 +126,7 @@
 	          </div>
           </div>
           <div class="col-md-6 d-flex align-items-stretch pb-5 pb-md-0">
-						<img src="images/map_tables.jpg">
+						<div class="center-block"><img src="images/map_tables.png"width="600" height="600">
 					</div>
         </div>
           
