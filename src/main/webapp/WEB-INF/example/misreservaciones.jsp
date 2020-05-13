@@ -37,17 +37,40 @@
 				var tblData="";
 				$.each(result.reservacionList, function() {					
 					tblData += 					
-						"<tr>" +
+						"<tr >" + "<p id='idComentarioD'>"+
 							"<td>" +this.idReservacion+"</td>" +
 							"<td>" +this.idMesa+"</td>" +
 							"<td>" +this.fecha+"</td>" +
 							"<td>" +this.horario+"</td>" +
 							"<td>" +this.npersonas+"</td>" +
+							"<td><button class='btn btn-sm btn-danger'>Delete</button>"+ "</td>"+
 						"</tr>";
 				});
 				$("#body").html(tblData);
 			},
 			error: function(result){
+				alert("Some error occured.");
+			}
+		});
+	}
+    
+    function deleteTweet(that) {	
+		var id_reservacion = $("#idComentarioD").text();
+		console.log(id_reservacion); 
+		$.ajax({
+			type:"POST",
+			url:"deletetweet.action",
+			data:"id_reservacion="+ id_reservacion,
+			success: function(data){
+				if(data.msg==="Delete Successful"){
+					alert(data.msg)
+					$(that).closest('#dl').remove();
+					
+				} else{
+					alert(data.msg)
+				}
+			},
+			error:function(data){
 				alert("Some error occured.");
 			}
 		});
@@ -96,11 +119,13 @@
 		  <table class="table" id="table">
 		    <thead>
 		      <tr>
+		      <p id="idComentarioD"></p>
 		        <th>ID Reservacion</th>
 		        <th>ID Mesa</th>
 		        <th>Fecha</th>
 		        <th>Horario</th>
 		        <th>Numero personas</th>
+		        <th>Eliminar</th>
 		      </tr>
 		    </thead>
 		    <tbody id= "body">
