@@ -26,8 +26,44 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript">
+
+function report() {		
+	$.ajax({			
+		type:"GET",
+		url:"report.action",
+		success: function(result){
+			var tblData="";
+			$.each(result.beanList, function() {					
+				tblData += 
+			    
+				   " <div class='media-12 border p-2' id='dl'>" +
+				        
+				       
+				       	"<p id='idComentarioD'> ID FEEDBACK:  " + this.id_feedback + "</p>"+
+				          "<h4> ID USUARIO:  " + this.id_usuario + "<small><i> Publicado:  " +  this.date + "</i></small></h4> "+
+				         " <p> Estrellas:  " +this.star + "</p>"+   " <p>Comentario:  " +this.comentario  +"</p>"+
+			
+				      
+				      "</div>";
+				    
+				  
+			});
+			$("#container").html(tblData);
+		},
+		error: function(result){
+			alert("Some error occured.");
+		}
+	});
+}
+	
+
+	
+	
+
+</script>
   </head>
-  <body>
+  <body  onload="report()" >
     <div class="py-1 bg-black top">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
@@ -66,6 +102,12 @@
 
 		<section class="ftco-section">
     	<div class="container">
+			<div class="row justify-content-center mb-2" >
+	   			 <div class="col-md-9 col-lg-9 align-self-center" id="container" >
+	    
+	  			</div>
+			</div>
+		</div>
         
     </section>
 		
