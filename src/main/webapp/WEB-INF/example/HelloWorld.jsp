@@ -58,7 +58,7 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item active"><a href="index.html" class="nav-link">Menú</a></li>
+	        	<li class="nav-item active"><a href="menu.jsp" class="nav-link">Menú</a></li>
 	        	<li class="nav-item"><a href="about.html" class="nav-link">Reservaciones</a></li>
 	        	<li class="nav-item"><a href="menu.html" class="nav-link">Feedback</a></li>
 	          <li class="nav-item cta"><a href="reservation.html" class="nav-link">Hacer reservación</a></li>
