@@ -107,14 +107,14 @@
 	                  <div class="form-group">
 	                    <label for="">Estrellas</label>
 	                    <div class="select-wrap one-third">
-	                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+	                      
 	                      <select  id="star" name="star"class="form-control">
-	                        <option value="0">0</option>
-	                        <option value="1">1</option>
-	                        <option value="2">2</option>
-	                        <option value="3">3</option>
-	                        <option value="4">4</option>
-	                        <option value="5">5</option>
+	                      
+	                        <option value="1"> &#9733</option>
+	                        <option value="2"> &#9733  &#9733</option>
+	                        <option value="3">   &#9733  &#9733 &#9733</option>
+	                        <option value="4"> &#9733  &#9733  &#9733  &#9733</option>
+	                        <option value="5"> &#9733  &#9733  &#9733  &#9733  &#9733</option>
 	                      </select>
 	                    </div>
 	                  </div>
