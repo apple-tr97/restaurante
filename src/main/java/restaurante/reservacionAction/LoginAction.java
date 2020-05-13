@@ -60,7 +60,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
     }
 
 
-  
     public void setSession(Map<String, Object> map) {
         sessionMap=(SessionMap)map;
     }
