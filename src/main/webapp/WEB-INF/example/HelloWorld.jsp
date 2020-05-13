@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -58,11 +61,19 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item active"><a href="menu.jsp" class="nav-link">Menú</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link">Reservaciones</a></li>
-	        	<li class="nav-item"><a href="menu.html" class="nav-link">Feedback</a></li>
-	          <li class="nav-item cta"><a href="reservation.html" class="nav-link">Hacer reservación</a></li>
-            <li class="nav-item cta"><a href="reservation.html" class="nav-link">Login</a></li>
+	        	<s:url action="goto_menu" var="goto_menu"/>
+	        	<s:url action="goto_misreservaciones" var="goto_misreservaciones"/>
+	        	<s:url action="goto_reservaciones" var="goto_reservaciones"/>
+	        	<s:url action="goto_feedback" var="goto_feedback"/>
+	        	<s:url action="goto_reportefeedback" var="goto_reportefeedback"/>
+	        	
+	        	<li class="nav-item active"><a href="${goto_menu}" class="nav-link">Menú</a></li>
+	        	<li class="nav-item"><a href="${goto_misreservaciones}"class="nav-link">Mis Reservaciones</a></li>
+	        	<li class="nav-item"><a href="${goto_reservaciones}" class="nav-link">Reservaciones</a></li>
+	        	<li class="nav-item"><a href="${goto_feedback}" class="nav-link">Feedback</a></li>
+	        	<li class="nav-item"><a href="${goto_menu}" class="nav-link">Reporte de Feedback</a></li>
+	          <li class="nav-item cta"><a href="${goto_reportefeedback}" class="nav-link">Hacer reservación</a></li>
+            <li class="nav-item cta"><a href="" class="nav-link">Login</a></li>
 	        </ul>
 	      </div>
 	    </div>

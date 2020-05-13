@@ -32,6 +32,10 @@
          <action name="goto_Feedback">
             <result>/WEB-INF/Feedback/crearFeedback.jsp</result>
         </action>
+        
+         <action name="goto_menu">
+            <result>/WEB-INF/example/menu.jsp</result>
+        </action>
 
         <action name="Login_*" method="{1}" class="restaurante.example.Login">
             <result name="input">/WEB-INF/example/Login.jsp</result>
