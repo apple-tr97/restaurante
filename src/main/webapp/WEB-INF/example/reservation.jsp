@@ -130,6 +130,11 @@
 	            </form>
 	          </div>
           </div>
+          <div class="col-md-6 d-flex align-items-stretch pb-5 pb-md-0">
+						<img src="images/map_tables.jpg">
+					</div>
+        </div>
+          
          
 			</div>
 		</section>
