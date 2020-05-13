@@ -15,13 +15,13 @@ public class ReservacionUsuarioAction extends ActionSupport {
 	ReservacionBean reservacionBean = null;
 	List<ReservacionBean> reservacionList = null;
 	ReservacionDAO reservacionDAO = new ReservacionDAO();
-	private String idUsuario = "1";
+	private int idUsuario = 1;
 	
 	
-	public String getIdUsuario() {
+	public int getIdUsuario() {
 		return idUsuario;
 	}
-	public void setIdUsuario(String idUsuario) {
+	public void setIdUsuario(int idUsuario) {
 		this.idUsuario = idUsuario;
 	}
 	public List<ReservacionBean> getReservacionList() {
