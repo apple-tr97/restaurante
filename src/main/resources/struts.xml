@@ -19,11 +19,11 @@
 	    </action>
 	    
 	         <action name="goto_verReservaciones">
-            <result>/WEB-INF/example/verReservaciones.jsp</result>
+            <result>/WEB-INF/reservaciones/verReservaciones.jsp</result>
         </action>
         
         <action name="goto_historialReservaciones">
-            <result>/WEB-INF/example/historialReservaciones.jsp</result>
+            <result>/WEB-INF/reservaciones/historialReservaciones.jsp</result>
         </action>
         
         <action name="goto_historialFeedback">
@@ -42,10 +42,13 @@
             <result>/WEB-INF/example/{1}.jsp</result>
         </action>
         
-        <action name="report" class="restaurante.reservacionAction.ReservacionAction">
+        <action name="historialReservaciones" class="restaurante.reservacionAction.ReservacionAction">
 			<result name="REPORT" type="json"></result>
 		</action>
 
+		<action name="historialReservacionesUsuario" class="restaurante.reservacionAction.ReservacionUsuarioAction">
+			<result name="REPORT" type="json"></result>
+		</action>
     </package>
 
     <!-- Add addition packages and configuration here. -->
