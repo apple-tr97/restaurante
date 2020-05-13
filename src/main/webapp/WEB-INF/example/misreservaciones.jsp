@@ -53,6 +53,10 @@
 			}
 		});
 	}
+
+	function back() {
+        window.history.go(-1);
+    }
     
     function deleteReservacion(that) {	
 		var id_reservacion = $("#idComentarioD").text();
@@ -112,10 +116,9 @@
         </div>
       </div>
     </section>
-
-
 		<section class="ftco-section">
-    	<div class="container">          
+    	<div class="container">
+            <button type="submit" onclick="back()" class="btn btn-default" id="back">Back</button>
 		  <table class="table" id="table">
 		    <thead>
 		      <tr>

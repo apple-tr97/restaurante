@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="css/style.css">
     
       <script type="text/javascript">
+          function back() {
+              window.history.go(-1);
+          }
     function report() {
     	console.log("Entramos?");
 		$.ajax({	
@@ -94,7 +97,7 @@
 
 
 		<div class="container">
-		          
+            <button type="submit" onclick="back()" class="btn btn-default" id="back">Back</button>
 		  <table class="table" id="table">
 		    <thead>
 		      <tr>

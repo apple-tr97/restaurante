@@ -27,7 +27,9 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript">
-
+        function back() {
+            window.history.go(-1);
+        }
 function report() {		
 	$.ajax({			
 		type:"GET",
@@ -41,7 +43,7 @@ function report() {
 				        
 				       
 				       	"<p id='idComentarioD'> ID FEEDBACK:  " + this.id_feedback + "</p>"+
-				          "<h4> ID USUARIO:  " + this.id_usuario + "<small><i> FECHA DE CREACIÓN:  " +  this.date + "</i></small></h4> "+
+				          "<h4> ID USUARIO:  " + this.id_usuario + "<small><i> FECHA DE CREACIï¿½N:  " +  this.date + "</i></small></h4> "+
 				         " <p> ESTRELLAS:  " +this.star + "</p>"+   " <p>COMENTARIO:  " +this.comentario  +"</p>"+
 			
 				      
@@ -102,6 +104,7 @@ function report() {
 
 		<section class="ftco-section">
     	<div class="container">
+            <button type="submit" onclick="back()" class="btn btn-default" id="back">Back</button>
 			<div class="row justify-content-center mb-2" >
 	   			 <div class="col-md-9 col-lg-9 align-self-center" id="container" >
 	    

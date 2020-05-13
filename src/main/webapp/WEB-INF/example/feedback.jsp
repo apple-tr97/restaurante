@@ -28,6 +28,11 @@
     <link rel="stylesheet" href="css/style.css">
     
     <script type="text/javascript">
+
+        function back() {
+            window.history.go(-1);
+        }
+
 	function registerFeedback() {
 		
 		
@@ -43,6 +48,7 @@
 			success : function(data) {
 				var ht = data.msg;
 				$("#resp").html(ht);
+                window.history.go(-1);
 			},
 			error : function(data) {
 				alert("Some error occured.");
@@ -95,6 +101,7 @@
 
 		<section class="ftco-section">
     	<div class="container">
+            <button type="submit" onclick="back()" class="btn btn-default" id="back">Back</button>
 	    	<div class="row">
 	    				
 		                <div class="col-md-6">
