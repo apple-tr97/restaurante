@@ -60,7 +60,7 @@ public class RegisterAction extends ActionSupport implements SessionAware {
     }
 
     Map<String, Object> session;
-    @Override
+ 
     public void setSession(Map<String, Object> map) {
         this.session = session;
     }
