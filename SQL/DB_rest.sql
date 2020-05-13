@@ -31,9 +31,9 @@ CREATE TABLE Feedback
 (
   id_feedback Int NOT NULL AUTO_INCREMENT,
  id_usuario   Int NOT NULL ,
- comentario   date  NOT NULL,
- star time NOT NULL ,
- fecha date   NOT NULL ,
+comentario Varchar(120) NOT NULL ,
+ star Int NOT NULL ,
+ date  datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
 PRIMARY KEY (id_feedback)
 );
