@@ -82,3 +82,4 @@ target/test-classes/restaurante/example/ConfigTest.class
 target/test-classes/restaurante/example/HelloWorldTest.class
 target/test-classes/restaurante/example/LoginTest.class
 *.class
+target/restaurante-1.0-SNAPSHOT/META-INF/MANIFEST.MF
