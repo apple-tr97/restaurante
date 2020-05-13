@@ -67,7 +67,8 @@ public class ReservacionDAO {
 				while (rs.next()) {
 					usuario.setId_usuario(rs.getInt(1));
 					usuario.setNombre(rs.getString(2));
-					usuario.setPass(rs.getString(3));
+					usuario.setMail(rs.getString(3));
+					usuario.setType(rs.getString(5));
 				}
 				myconnection().close();
 				return usuario;
@@ -78,7 +79,7 @@ public class ReservacionDAO {
 
 	public static int insertarUsuario(String mail, String password, String name) {
 		String insertQuery = "INSERT INTO usuario (name, mail, password, type)";
-		insertQuery += "VALUES(?,?,?,user)";
+		insertQuery += "VALUES(?,?,?,'user')";
 		int generatedKey = -1;
 		try {
 

@@ -41,6 +41,7 @@ public class RegisterAction extends ActionSupport implements SessionAware {
 
     public String registrarUsuario() {
         if(passC.contentEquals(pass)) {
+            System.out.println("mail: "+mail+"pass: "+pass+"Name: "+name);
             int registro_repetido = ReservacionDAO.insertarUsuario(mail, pass, name);
             if(registro_repetido == -1)//si el registro_repetido es -1 signfica que no se pudo insertar el usuario
                 return INPUT;

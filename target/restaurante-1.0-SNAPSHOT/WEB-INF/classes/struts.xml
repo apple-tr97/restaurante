@@ -61,6 +61,14 @@
 		<action name="historialReservacionesUsuario" class="restaurante.reservacionAction.ReservacionUsuarioAction">
 			<result name="REPORT" type="json"></result>
 		</action>
+
+        <action name="registrar" class="restaurante.reservacionAction.RegisterAction" method="registrarUsuario">
+            <result name="success" type="json"/>
+        </action>
+
+        <action name="login" class="restaurante.reservacionAction.LoginAction" method="validar">
+            <result name="success" type="json"/>
+        </action>
     </package>
 
     <!-- Add addition packages and configuration here. -->
