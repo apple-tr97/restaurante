@@ -618,12 +618,12 @@
 							document.getElementById("loginmb").style.display = "none";
 							$("#signout").html(response.userbean.nombre+" (sign out)");
 							document.getElementById("signout").style.display = "block";
-							document.getElementById("res").style.display = "block";
 							document.getElementById("s").style.display = "block";
 							$("#Login").modal("hide");
 							$("#usr").val("");
 							$("#pwd").val("");
 							if(response.userbean.type == "user") {
+								document.getElementById("res").style.display = "block";
 								document.getElementById("ureserve").style.display = "block";
 								document.getElementById("ufeed").style.display = "block";
 							}else {

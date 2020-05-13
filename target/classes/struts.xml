@@ -100,7 +100,6 @@
         <action name="deletetweet" class="restaurante.action.DeleteAction">
 			<result name="DELETE" type="json"></result>
 		</action>
-
     </package>
 
     <!-- Add addition packages and configuration here. -->
