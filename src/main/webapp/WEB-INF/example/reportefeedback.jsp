@@ -41,8 +41,8 @@ function report() {
 				        
 				       
 				       	"<p id='idComentarioD'> ID FEEDBACK:  " + this.id_feedback + "</p>"+
-				          "<h4> ID USUARIO:  " + this.id_usuario + "<small><i> Publicado:  " +  this.date + "</i></small></h4> "+
-				         " <p> Estrellas:  " +this.star + "</p>"+   " <p>Comentario:  " +this.comentario  +"</p>"+
+				          "<h4> ID USUARIO:  " + this.id_usuario + "<small><i> FECHA DE CREACIÓN:  " +  this.date + "</i></small></h4> "+
+				         " <p> ESTRELLAS:  " +this.star + "</p>"+   " <p>COMENTARIO:  " +this.comentario  +"</p>"+
 			
 				      
 				      "</div>";

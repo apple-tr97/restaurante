@@ -47,7 +47,7 @@ public class ReportAction extends ActionSupport{
 					bean.setStar(rs.getInt("star"));
 					bean.setDate(rs.getTimestamp("date"));
 					beanList.add(bean);
-					System.out.println(bean);
+					
 				}
 			}
 		} catch (Exception e) {
