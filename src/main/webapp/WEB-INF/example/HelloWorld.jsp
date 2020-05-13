@@ -70,7 +70,7 @@
     <!-- END nav -->
     
     <section class="home-slider owl-carousel js-fullheight">
-      <div class="slider-item js-fullheight" style="background-image: url(images/bg_1.jpg);">
+      <div class="slider-item js-fullheight" style="background-image: url(../images/bg_1.jpg);">
       	<div class="overlay"></div>
         <div class="container">
           <div class="row slider-text js-fullheight justify-content-center align-items-center" data-scrollax-parent="true">
@@ -84,7 +84,7 @@
         </div>
       </div>
 
-      <div class="slider-item js-fullheight" style="background-image: url(images/bg_2.jpg);">
+      <div class="slider-item js-fullheight" style="background-image: url(../images/bg_2.jpg);">
       	<div class="overlay"></div>
         <div class="container">
           <div class="row slider-text js-fullheight justify-content-center align-items-center" data-scrollax-parent="true">
@@ -98,7 +98,7 @@
         </div>
       </div>
 
-      <div class="slider-item js-fullheight" style="background-image: url(images/bg_3.jpg);">
+      <div class="slider-item js-fullheight" style="background-image: url(../images/bg_3.jpg);">
       	<div class="overlay"></div>
         <div class="container">
           <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -121,7 +121,7 @@
     					<div class="row">
     						<div class="col-md-3">
     							<div class="featured-menus ftco-animate">
-			              <div class="menu-img img" style="background-image: url(images/breakfast-1.jpg);"></div>
+			              <div class="menu-img img" style="background-image: url(../images/breakfast-1.jpg);"></div>
 			              <div class="text text-center">
 		                  <h3>Grilled Beef with potatoes</h3>
 				              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
@@ -130,7 +130,7 @@
     						</div>
     						<div class="col-md-3">
     							<div class="featured-menus ftco-animate">
-			              <div class="menu-img img" style="background-image: url(images/breakfast-2.jpg);"></div>
+			              <div class="menu-img img" style="background-image: url(../images/breakfast-2.jpg);"></div>
 			              <div class="text text-center">
 		                  <h3>Grilled Beef with potatoes</h3>
 				              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
@@ -139,7 +139,7 @@
     						</div>
     						<div class="col-md-3">
     							<div class="featured-menus ftco-animate">
-			              <div class="menu-img img" style="background-image: url(images/breakfast-3.jpg);"></div>
+			              <div class="menu-img img" style="background-image: url(../images/breakfast-3.jpg);"></div>
 			              <div class="text text-center">
 		                  <h3>Grilled Beef with potatoes</h3>
 				              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
@@ -148,7 +148,7 @@
     						</div>
     						<div class="col-md-3">
     							<div class="featured-menus ftco-animate">
-			              <div class="menu-img img" style="background-image: url(images/breakfast-4.jpg);"></div>
+			              <div class="menu-img img" style="background-image: url(../images/breakfast-4.jpg);"></div>
 			              <div class="text text-center">
 		                  <h3>Grilled Beef with potatoes</h3>
 				              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
@@ -167,8 +167,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-7 d-flex">
-						<div class="img img-1 mr-md-2" style="background-image: url(images/about.jpg);"></div>
-						<div class="img img-2 ml-md-2" style="background-image: url(images/about-1.jpg);"></div>
+						<div class="img img-1 mr-md-2" style="background-image: url(../images/about.jpg);"></div>
+						<div class="img img-2 ml-md-2" style="background-image: url(../images/about-1.jpg);"></div>
 					</div>
 					<div class="col-md-5 wrap-about pt-5 pt-md-5 pb-md-3 ftco-animate">
 	          <div class="heading-section mb-4 my-5 my-md-0">
@@ -245,7 +245,7 @@
         <div class="row no-gutters d-flex align-items-stretch">
         	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
         		<div class="menus d-sm-flex ftco-animate align-items-stretch">
-              <div class="menu-img img" style="background-image: url(images/breakfast-1.jpg);"></div>
+              <div class="menu-img img" style="background-image: url(../images/breakfast-1.jpg);"></div>
               <div class="text d-flex align-items-center">
 								<div>
 	              	<div class="d-flex">
@@ -264,7 +264,7 @@
         	</div>
         	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
         		<div class="menus d-sm-flex ftco-animate align-items-stretch">
-              <div class="menu-img img" style="background-image: url(images/breakfast-2.jpg);"></div>
+              <div class="menu-img img" style="background-image: url(../images/breakfast-2.jpg);"></div>
               <div class="text d-flex align-items-center">
 								<div>
 	              	<div class="d-flex">
@@ -284,7 +284,7 @@
 
         	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
         		<div class="menus d-sm-flex ftco-animate align-items-stretch">
-              <div class="menu-img img order-md-last" style="background-image: url(images/breakfast-3.jpg);"></div>
+              <div class="menu-img img order-md-last" style="background-image: url(../images/breakfast-3.jpg);"></div>
               <div class="text d-flex align-items-center">
 								<div>
 	              	<div class="d-flex">
@@ -303,7 +303,7 @@
         	</div>
         	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
         		<div class="menus d-sm-flex ftco-animate align-items-stretch">
-              <div class="menu-img img order-md-last" style="background-image: url(images/breakfast-5.jpg);"></div>
+              <div class="menu-img img order-md-last" style="background-image: url(../images/breakfast-5.jpg);"></div>
               <div class="text d-flex align-items-center">
 								<div>
 	              	<div class="d-flex">
@@ -323,7 +323,7 @@
 
         	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
         		<div class="menus d-sm-flex ftco-animate align-items-stretch">
-              <div class="menu-img img" style="background-image: url(images/breakfast-6.jpg);"></div>
+              <div class="menu-img img" style="background-image: url(../images/breakfast-6.jpg);"></div>
               <div class="text d-flex align-items-center">
 								<div>
 	              	<div class="d-flex">
@@ -342,7 +342,7 @@
         	</div>
         	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
         		<div class="menus d-sm-flex ftco-animate align-items-stretch">
-              <div class="menu-img img" style="background-image: url(images/breakfast-2.jpg);"></div>
+              <div class="menu-img img" style="background-image: url(../images/breakfast-2.jpg);"></div>
               <div class="text d-flex align-items-center">
 								<div>
 	              	<div class="d-flex">
