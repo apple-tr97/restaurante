@@ -84,7 +84,7 @@
         <action name="login" class="restaurante.reservacionAction.LoginAction" method="validar">
             <result name="success" type="json"/>
         </action>
-
+        
         <action name="salir" class="restaurante.reservacionAction.LoginAction" method="validarStuff">
             <result name="success" type="json"/>
         </action>
@@ -96,6 +96,11 @@
         <action name="reservar" class="restaurante.reservacionAction.ReservacionAction" method="reservar">
             <result name="success" type="json"/>
         </action>
+        
+        <action name="deletetweet" class="restaurante.action.DeleteAction">
+			<result name="DELETE" type="json"></result>
+		</action>
+
     </package>
 
     <!-- Add addition packages and configuration here. -->

@@ -8,22 +8,22 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import restaurante.reservacionBean.ReservacionBean;
 import restaurante.reservacionDAO.ReservacionDAO;
+import java.util.Map;
 
-public class ReservacionUsuarioAction extends ActionSupport {
+import org.apache.struts2.dispatcher.SessionMap;
+import org.apache.struts2.interceptor.SessionAware;
+
+public class ReservacionUsuarioAction extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = 1L;
 	ResultSet rs = null;
 	ReservacionBean reservacionBean = null;
 	List<ReservacionBean> reservacionList = null;
 	ReservacionDAO reservacionDAO = new ReservacionDAO();
-	private int idUsuario = 1;
+	private int id;
+	private SessionMap<String,Object> sessionMap;
 	
 	
-	public int getIdUsuario() {
-		return idUsuario;
-	}
-	public void setIdUsuario(int idUsuario) {
-		this.idUsuario = idUsuario;
-	}
+	
 	public List<ReservacionBean> getReservacionList() {
 		return reservacionList;
 	}
@@ -31,11 +31,20 @@ public class ReservacionUsuarioAction extends ActionSupport {
 		this.reservacionList = reservacionList;
 	}
 	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	@Override
 	public String execute() throws Exception {
 		try {
 			reservacionList = new ArrayList<ReservacionBean>();
-			rs = reservacionDAO.historialReservacionesUsuario(idUsuario);
+			
+			rs = reservacionDAO.historialReservacionesUsuario((Integer)sessionMap.get("id"));
+			System.out.println("Id: "+ id);
 			if (rs != null) {
 				while (rs.next()) {
 					reservacionBean = new ReservacionBean();
@@ -53,6 +62,9 @@ public class ReservacionUsuarioAction extends ActionSupport {
 
 		return "REPORT";
 	}
-	
+
+	public void setSession(Map<String, Object> map) {
+        sessionMap=(SessionMap)map;
+    }
 
 }

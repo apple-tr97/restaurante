@@ -26,8 +26,58 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    
+       <script type="text/javascript">
+    function report() {
+		$.ajax({	
+
+			type:"GET",
+			url:"historialReservacionesUsuario.action",
+			success: function(result){
+				var tblData="";
+				$.each(result.reservacionList, function() {					
+					tblData += 					
+						"<tr id = 'columna'>" +
+							"<td  id='idComentarioD'>" +this.idReservacion+"</td>" +
+							"<td>" +this.idMesa+"</td>" +
+							"<td>" +this.fecha+"</td>" +
+							"<td>" +this.horario+"</td>" +
+							"<td>" +this.npersonas+"</td>" +
+							"<td><button class='btn btn-sm btn-danger' onclick='deleteReservacion(this);'>Delete</button>"+ "</td>"+
+						"</tr>";
+				});
+				$("#body").html(tblData);
+			},
+			error: function(result){
+				alert("Some error occured.");
+			}
+		});
+	}
+    
+    function deleteReservacion(that) {	
+		var id_reservacion = $("#idComentarioD").text();
+		console.log(id_reservacion); 
+		
+		var json = {"idReservacion":id_reservacion}
+		$.ajax({
+			type:"POST",
+			url:"deletetweet.action",
+			data:"idReservacion="+ id_reservacion,
+			success: function(data){
+				
+					alert("Borrado Exitoso");
+					$(that).closest("#columna").remove();
+					
+				
+			},
+			error:function(data){
+				alert("Some error occured.");
+			}
+		});
+	}
+    </script>
   </head>
-  <body>
+  <body onload="report();">
     <div class="py-1 bg-black top">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
@@ -65,7 +115,25 @@
 
 
 		<section class="ftco-section">
-    	<div class="container">
+    	<div class="container">          
+		  <table class="table" id="table">
+		    <thead>
+		      <tr>
+		      
+		        <th>ID Reservacion</th>
+		        <th>ID Mesa</th>
+		        <th>Fecha</th>
+		        <th>Horario</th>
+		        <th>Numero personas</th>
+		        <th>Eliminar</th>
+		      </tr>
+		    </thead>
+		    <tbody id= "body">
+		      <tr>
+		      </tr>
+		    </tbody>
+		  </table>
+		</div>
        
 	            
 

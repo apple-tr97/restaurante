@@ -26,6 +26,35 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    
+    <script type="text/javascript">
+	function registerFeedback() {
+		
+		
+		
+		var star = $("#star").val();
+		var comentario = $("#comentario").val();
+		console.log(comentario);
+		console.log(star);
+		$.ajax({
+			type : "POST",
+			url : "registerfeedback.action",
+			data : "comentario=" + comentario  + "&star=" + star,
+			success : function(data) {
+				var ht = data.msg;
+				$("#resp").html(ht);
+			},
+			error : function(data) {
+				alert("Some error occured.");
+			}
+		});
+	}
+	
+
+	
+	
+
+</script>
   </head>
   <body>
     <div class="py-1 bg-black top">
@@ -66,6 +95,37 @@
 
 		<section class="ftco-section">
     	<div class="container">
+	    	<div class="row">
+	    				
+		                <div class="col-md-6">
+		                  <div class="form-group">
+		                    <label for="">Comentario</label>
+		                    <input type="text" class="form-control" id="comentario" name="comentario"placeholder="Comentario">
+		                  </div>
+		                </div>
+		                 <div class="col-md-6">
+	                  <div class="form-group">
+	                    <label for="">Estrellas</label>
+	                    <div class="select-wrap one-third">
+	                      
+	                      <select  id="star" name="star"class="form-control">
+	                      
+	                        <option value="1"> &#9733</option>
+	                        <option value="2"> &#9733  &#9733</option>
+	                        <option value="3">   &#9733  &#9733 &#9733</option>
+	                        <option value="4"> &#9733  &#9733  &#9733  &#9733</option>
+	                        <option value="5"> &#9733  &#9733  &#9733  &#9733  &#9733</option>
+	                      </select>
+	                    </div>
+	                  </div>
+	                </div>
+		                
+		                     <button onclick="registerFeedback();" type="button" class="btn btn-primary py-3 px-5">Register</button>
+						<div class="text-center" id="resp" style="margin-top: 14px;"></div>
+		              
+		    </div>
+	    </div>
+			 
         
     </section>
 		

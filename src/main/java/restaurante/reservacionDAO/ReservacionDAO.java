@@ -159,11 +159,13 @@ public class ReservacionDAO {
 	}
 
 	public static int eliminar(int id_reserva) throws Exception {
-		String delete_query = "DELETE FROM reservacion";
-		delete_query += "WHERE id_reservacion = ?";
+		String delete_query = "DELETE FROM reservacion WHERE id_reservacion = ";
+		delete_query += id_reserva;
+		System.out.println(delete_query);
+		
 		try {
 			PreparedStatement ps = myconnection().prepareStatement(delete_query);
-			ps.setInt(1, id_reserva);
+			//ps.setInt(1, id_reserva);
 			int rowsAffected = ps.executeUpdate();
 			return rowsAffected;
 		} catch (SQLException e) {
@@ -172,4 +174,6 @@ public class ReservacionDAO {
 			return 0;
 		}
 	}
+	
+	
 }
