@@ -66,13 +66,14 @@
 	        	<s:url action="goto_reservaciones" var="goto_reservaciones"/>
 	        	<s:url action="goto_feedback" var="goto_feedback"/>
 	        	<s:url action="goto_reportefeedback" var="goto_reportefeedback"/>
+	        	<s:url action="goto_creareservacion" var="goto_creareservacion"/>
 	        	
 	        	<li class="nav-item active"><a href="${goto_menu}" class="nav-link">Menú</a></li>
 	        	<li class="nav-item"><a href="${goto_misreservaciones}"class="nav-link">Mis Reservaciones</a></li>
 	        	<li class="nav-item"><a href="${goto_reservaciones}" class="nav-link">Reservaciones</a></li>
 	        	<li class="nav-item"><a href="${goto_feedback}" class="nav-link">Feedback</a></li>
-	        	<li class="nav-item"><a href="${goto_menu}" class="nav-link">Reporte de Feedback</a></li>
-	          <li class="nav-item cta"><a href="${goto_reportefeedback}" class="nav-link">Hacer reservación</a></li>
+	        	<li class="nav-item"><a href="${goto_reportefeedback}" class="nav-link">Reporte de Feedback</a></li>
+	          <li class="nav-item cta"><a href="${goto_creareservacion}" class="nav-link">Hacer reservación</a></li>
             <li class="nav-item cta"><a href="" class="nav-link">Login</a></li>
 	        </ul>
 	      </div>
