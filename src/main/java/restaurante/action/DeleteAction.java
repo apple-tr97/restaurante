@@ -5,29 +5,30 @@ import restaurante.reservacionDAO.*;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class DeleteAction extends ActionSupport{
-	private String id_comentario, msg;
 
-	public String getId_comentario() {
-		return id_comentario;
-	}
-
-	public void setId_comentario(String id_comentario) {
-		this.id_comentario = id_comentario;
-	}
+	private static final long serialVersionUID = 1L;
+	private int idReservacion, returnReservacion;
 	
-	public String getMsg() {
-		return msg;
+	public int getIdReservacion() {
+		return idReservacion;
 	}
 
-	public void setMsg(String msg) {
-		this.msg = msg;
+	public void setIdReservacion(int idReservacion) {
+		this.idReservacion = idReservacion;
+	}	
+
+	public int getReturnReservacion() {
+		return returnReservacion;
+	}
+
+	public void setReturnReservacion(int returnReservacion) {
+		this.returnReservacion = returnReservacion;
 	}
 
 	public String execute() throws Exception {
 		System.out.println("Entra a delete?");
-		ReservacionDAO dao = new ReservacionDAO();
-		System.out.println("Id comentario: "+ id_comentario.toString());
-		msg = dao.eliminar(id_comentario);
+		System.out.println("Id comentario: "+ idReservacion);
+		returnReservacion = ReservacionDAO.eliminar(idReservacion);
 		return "DELETE";
 	}
 

@@ -43,7 +43,7 @@
 							"<td>" +this.fecha+"</td>" +
 							"<td>" +this.horario+"</td>" +
 							"<td>" +this.npersonas+"</td>" +
-							"<td><button class='btn btn-sm btn-danger'>Delete</button>"+ "</td>"+
+							"<td><button class='btn btn-sm btn-danger' onclick='deleteReservacion();'>Delete</button>"+ "</td>"+
 						"</tr>";
 				});
 				$("#body").html(tblData);
@@ -54,7 +54,7 @@
 		});
 	}
     
-    function deleteTweet(that) {	
+    function deleteReservacion(that) {	
 		var id_reservacion = $("#idComentarioD").text();
 		console.log(id_reservacion); 
 		$.ajax({
