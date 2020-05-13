@@ -39,14 +39,14 @@
 		    		<div class="row d-flex">
 		    			<div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-						    <span class="text">+ 1235 2355 98</span>
+						    <span class="text">+52 722379128</span>
 					    </div>
 					    <div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-						    <span class="text">youremail@email.com</span>
+						    <span class="text">feliciano@gmail.com</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
-						    <p class="mb-0 register-link"><span>Open hours:</span> <span>Monday - Sunday</span> <span>8:00AM - 9:00PM</span></p>
+						    <p class="mb-0 register-link"><span>Servicio:</span> <span>Lunes - Sábado</span> <span>8:00AM - 9:00PM</span></p>
 					    </div>
 				    </div>
 			    </div>
@@ -70,12 +70,13 @@
 	        	<s:url action="goto_creareservacion" var="goto_creareservacion"/>
 	        	
 	        	<li class="nav-item active"><a href="${goto_menu}" class="nav-link">Menú</a></li>
-	        	<li class="nav-item"><a href="${goto_misreservaciones}"class="nav-link">Mis Reservaciones</a></li>
-	        	<li class="nav-item"><a href="${goto_reservaciones}" class="nav-link">Reservaciones</a></li>
-	        	<li class="nav-item"><a href="${goto_feedback}" class="nav-link">Feedback</a></li>
-	        	<li class="nav-item"><a href="${goto_reportefeedback}" class="nav-link">Reporte de Feedback</a></li>
-	          <li class="nav-item cta"><a href="${goto_creareservacion}" class="nav-link">Hacer reservación</a></li>
+	        	<li class="nav-item" style="display: none" id="ureserve"><a href="${goto_misreservaciones}"class="nav-link">Mis Reservaciones</a></li>
+	        	<li class="nav-item" style="display: none" id="reserve"><a href="${goto_reservaciones}" class="nav-link">Reservaciones</a></li>
+	        	<li class="nav-item" style="display: none" id="ufeed"><a href="${goto_feedback}" class="nav-link">Feedback</a></li>
+	        	<li class="nav-item" style="display: none" id="feed"><a href="${goto_reportefeedback}" class="nav-link">Reporte de Feedback</a></li>
+	          <li class="nav-item cta" style="display: none" id="res"><a href="${goto_creareservacion}" class="nav-link">Hacer reservación</a></li>
             <button type="button" id="loginmb" style="display: block" class="btn btn-primary" data-toggle="modal" data-target="#Login">Login</button>
+				<li class="nav-item" style="display: none" id="s"><a href="#" class="nav-link"></a></li>
             <button type="button" id="signout" style="display: none" class="btn btn-primary"></button>
 	        </ul>
 	      </div>
@@ -555,6 +556,22 @@
 			$("#SignIn").modal("toggle");
 		}
 
+		$("#signout").click(function(){
+			var json;
+			$.ajax({
+				url: "salir",
+				type: 'POST',
+				dataType: 'json',
+				data: json,
+				success:function(response){
+					location.reload();
+				},
+				error:function(jqXhr, textStatus, errorThrown){
+					alert("Error al salir");
+				}
+			});
+		});
+
 		$("#signInB").click(function(){
 			var name = $("#nName").val();
 			var email = $("#nUser").val();
@@ -601,11 +618,17 @@
 							document.getElementById("loginmb").style.display = "none";
 							$("#signout").html(response.userbean.nombre+" (sign out)");
 							document.getElementById("signout").style.display = "block";
+							document.getElementById("s").style.display = "block";
 							$("#Login").modal("hide");
 							$("#usr").val("");
 							$("#pwd").val("");
 							if(response.userbean.type == "user") {
-								
+								document.getElementById("res").style.display = "block";
+								document.getElementById("ureserve").style.display = "block";
+								document.getElementById("ufeed").style.display = "block";
+							}else {
+								document.getElementById("reserve").style.display = "block";
+								document.getElementById("feed").style.display = "block";
 							}
 
 						},

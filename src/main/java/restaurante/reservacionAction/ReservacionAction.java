@@ -16,8 +16,8 @@ import restaurante.reservacionDAO.ReservacionDAO;
 
 public class ReservacionAction extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = 1L;
-	public Date fecha;
-	public Time horario;
+	public String fecha;
+	public String horario;
 	public int[] mesas = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 	public int npersonas;
 	public int mesa;
@@ -40,16 +40,16 @@ public class ReservacionAction extends ActionSupport implements SessionAware {
 	public void setNpersonas(int npersonas) {
 		this.npersonas = npersonas;
 	}
-	public Date getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
-	public Time getHorario() {
+	public String getHorario() {
 		return horario;
 	}
-	public void setHorario(Time horario) {
+	public void setHorario(String horario) {
 		this.horario = horario;
 	}
 	private SessionMap<String,Object> sessionMap;
@@ -96,10 +96,16 @@ public class ReservacionAction extends ActionSupport implements SessionAware {
 	}
 
 	public String verDisponibilidad() {
-		reservas = ReservacionDAO.reservas((java.sql.Date) fecha, horario);
+		System.out.println(fecha);
+		System.out.println(horario);
+		reservas = ReservacionDAO.reservas(fecha, horario);
+		System.out.println(reservas);
+		System.out.println(npersonas);
 		for (int i = 0; i < reservas.size(); i++){
 			mesas[reservas.get(i)-1] = 0;
-			if(npersonas < 4 && (i < 4 || (i > 8 && i < 11)) ) {
+		}
+		for (int i = 0; i < 13; i++) {
+			if(npersonas > 4 && (i < 4 || (i > 8 && i < 11)) ) {
 				mesas[i] = 0;
 			}
 			if(npersonas > 6 && (i > 3 && i < 9)) {
@@ -112,7 +118,7 @@ public class ReservacionAction extends ActionSupport implements SessionAware {
 
 	public String reservar() {
 		boolean reserva;
-		reserva = ReservacionDAO.reservar((Integer)sessionMap.get("id"),mesa, (java.sql.Date) fecha,horario,npersonas);
+		reserva = ReservacionDAO.reservar((Integer)sessionMap.get("id"),mesa, fecha,horario,npersonas);
 		if(reserva){
 			return SUCCESS;}
 		else

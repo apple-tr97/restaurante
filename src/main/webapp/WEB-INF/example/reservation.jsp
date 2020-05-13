@@ -72,14 +72,13 @@
           	<div class="py-md-5">
 	          	<div class="heading-section ftco-animate mb-5">
 		          	<span class="subheading">Reserva una mesa</span>
-		            <h2 class="mb-4">Haz una reservación</h2>
 		          </div>
 	            <form action="#">
 	              <div class="row">
-	                <div class="col-md-6">
+	                <div class="col-md-6" style="display: none">
 	                  <div class="form-group">
 	                    <label for="">Nombre</label>
-	                    <input type="text" class="form-control" placeholder="Nombre">
+	                    <input type="text" class="form-control" id="name" placeholder="Nombre">
 	                  </div>
 	                </div>
 	                
@@ -95,32 +94,34 @@
 	                    <input type="text" class="form-control" id="book_time" placeholder="Horario">
 	                  </div>
 	                </div>
-	                 <div class="col-md-6">
+	                 <!--<div class="col-md-6">
 	                  <div class="form-group">
 	                    <label for="">Mesa</label>
 	                    <input type="text" class="form-control" placeholder="Mesa">
 	                  </div>
-	                </div>
+	                </div> -->
 	                <div class="col-md-6">
 	                  <div class="form-group">
-	                    <label for="">Número de personas</label>
-	                    <div class="select-wrap one-third">
-	                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-	                      <select name="" id="" class="form-control">
-	                        <option value="">Person</option>
-	                        <option value="">1</option>
-	                        <option value="">2</option>
-	                        <option value="">3</option>
-	                        <option value="">4+</option>
-	                      </select>
-	                    </div>
+	                    <label for="">Numero de personas</label>
+                          <input type="number" id="people" class="form-control" min="1" max="8">
 	                  </div>
 	                </div>
 	                <div class="col-md-12 mt-3">
 	                  <div class="form-group">
-	                    <input type="submit" value="Hacer Reservación" class="btn btn-primary py-3 px-5">
+                          <button type="button" id="mesa" class="btn btn-primary py-3 px-5">Buscar mesa</button>
 	                  </div>
 	                </div>
+                      <div class="col-md-12 mt-3">
+                          <label for="">Mesas</label>
+                          <select class="form-control" id="mesas">
+
+                          </select>
+                      </div>
+                      <div class="col-md-12 mt-3">
+                          <div class="form-group">
+                              <button type="button" id="reserve" class="btn btn-primary py-3 px-5" disabled>Realizar reservacion</button>
+                          </div>
+                      </div>
 	              </div>
 	            </form>
 	          </div>
@@ -231,4 +232,64 @@
   <script src="js/main.js"></script>
     
   </body>
+    <script>
+        $("#reserve").click(function () {
+            var fecha = $("#book_date").val();
+            var horario = $("#book_time").val();
+            var personas = $("#people").val();
+            var mesa = $("#mesas").val();
+            var json = {"fecha":fecha,"horario":horario,"npersonas":personas,"mesa":mesa};
+            $.ajax({
+                url: "reservar",
+                type: 'POST',
+                dataType: 'json',
+                data: json,
+                success:function(response){
+                    alert("Reserva realizada")
+                    window.history.go(-1);
+                },
+                error:function(jqXhr, textStatus, errorThrown){
+                    alert("Error al reservar");
+                }
+            })
+        })
+
+        $("#mesa").click(function(){
+            var c = 0;
+            var nombre = $("#name").val();
+            var fecha = $("#book_date").val();
+            var horario = $("#book_time").val();
+            var personas = $("#people").val();
+            var json = {"fecha":fecha,"horario":horario,"npersonas":personas}
+            if (nombre.length > 1) {
+
+            } else {
+                if (fecha.length > 0) {
+                    if (horario.length > 0) {
+                        if (personas >0) {
+                            $.ajax({
+                                url: "mesa",
+                                type: 'POST',
+                                dataType: 'json',
+                                data: json,
+                                success:function(response){
+                                    $("#mesas").empty();
+                                    response.mesas.forEach(function (index) {
+                                        if(index > 0) {
+                                            c = 1;
+                                            $("#mesas").append("<option>"+index+"</option>");
+                                        }
+                                    })
+                                    if(c === 1) {$("#reserve").prop('disabled', false);}else {alert("No hay mesas disponibles")}
+                                },
+                                error:function(jqXhr, textStatus, errorThrown){
+                                    alert("Error al buscar mesas");
+                                }
+                            });
+                        }else {alert("Seleccione numero de personas")}
+                    }else {alert("Seleccione un horario")}
+                }else {alert("Seleccione una fecha")}
+            }
+        });
+    </script>
 </html>
