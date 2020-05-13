@@ -19,8 +19,8 @@ CREATE TABLE Reservacion
   id_reservacion Int NOT NULL AUTO_INCREMENT,
  id_usuario   Int NOT NULL ,
  id_mesa   Int NOT NULL ,
- fecha   date  NOT NULL,
- horario time NOT NULL ,
+ fecha   VARCHAR(45)  NOT NULL,
+ horario VARCHAR(45) NOT NULL ,
  npersonas     Int NOT NULL ,
 
 PRIMARY KEY (id_reservacion)

@@ -119,14 +119,14 @@ public class ReservacionDAO {
 		}
 	}
 
-	public static List<Integer> reservas(Date fecha, Time horario) {
+	public static List<Integer> reservas(String fecha, String horario) {
 		ResultSet rs = null;
 		List<Integer> reservas = new ArrayList<Integer>();
 		String sql = "SELECT id_mesa FROM Reservacion WHERE fecha = ? AND horario = ?";
 		try {
 			PreparedStatement ps = myconnection().prepareStatement(sql);
-			ps.setDate(1,fecha);
-			ps.setTime(2,horario);
+			ps.setString(1,fecha);
+			ps.setString(2,horario);
 			rs = ps.executeQuery();
 			if(rs != null) {
 				while(rs.next()) {
@@ -139,14 +139,15 @@ public class ReservacionDAO {
 		return null;
 	}
 
-	public static boolean reservar(int user, int mesa, Date fecha, Time horario, int npersonas) {
+	public static boolean reservar(int user, int mesa, String fecha, String horario, int npersonas) {
+		System.out.println(user+mesa+fecha+horario+npersonas);
 		String sql = "INSERT INTO reservacion(id_usuario,id_mesa,fecha,horario,npersonas) VALUES(?,?,?,?,?)";
 		try {
 			PreparedStatement statement = myconnection().prepareStatement(sql);
 			statement.setInt(1, user);
 			statement.setInt(2,mesa);
-			statement.setDate(3,fecha);
-			statement.setTime(4,horario);
+			statement.setString(3,fecha);
+			statement.setString(4,horario);
 			statement.setInt(5,npersonas);
 			statement.execute();
 			myconnection().close();

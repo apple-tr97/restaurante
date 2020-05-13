@@ -62,7 +62,10 @@ public class LoginAction extends ActionSupport implements SessionAware {
     }
 
     public String validarStuff() {
-        return null;
+        if(sessionMap!=null){
+            sessionMap.invalidate();
+        }
+        return SUCCESS;
     }
 
 
