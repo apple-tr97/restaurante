@@ -84,3 +84,6 @@ target/test-classes/restaurante/example/LoginTest.class
 *.class
 target/restaurante-1.0-SNAPSHOT/META-INF/MANIFEST.MF
 .idea/workspace.xml
+restaurante/.idea/workspace.xml
+restaurante/.idea/restaurante.iml
+restaurante/.idea/restaurante.iml
